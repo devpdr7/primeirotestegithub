@@ -11,19 +11,30 @@
         }
 
         .botao-vermelho {
-            color: red;
+            background-color: grey;
+            border: 3px solid black;
             height: 300px;
             width: 300px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="botao-vermelho">Clique em mim</div>
+        <div class="botao-vermelho">Clique em mim <p id="contagem"></p></div>
     </div>
 
 </body>
 <script>
+    let contagem = 0;
+
     
+    const botaoVermelho = document.querySelector('.botao-vermelho');
+    const paragrafo = document.querySelector('#contagem');
+
+    botaoVermelho.addEventListener('click', () => {
+        contagem++;
+        paragrafo.innerHTML = `<br> Você deu ${contagem} clicks.`;
+    })
 </script>
 </html>
